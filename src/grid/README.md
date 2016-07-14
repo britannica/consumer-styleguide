@@ -1,13 +1,13 @@
 ### To include a grid component:
 
-1. Create a `<div>` element with the `.grid` class
+&nbsp;1. Create a `<div>` element with the `.grid` class
 
 ```html
 <div class="grid">
 </div>
 ```
 
-2. For each cell, create an inner `<div>` element
+&nbsp;2. For each cell, create an inner `<div>` element
 
 ```html
 <div class="grid">
@@ -17,7 +17,7 @@
 </div>
 ```
 
-3. Add a `.grid-SIZE-WIDTH` class, where `SIZE` specifies which **device size** this rule should be applied to, and `WIDTH`
+&nbsp;3. Add a `.grid-SIZE-WIDTH` class, where `SIZE` specifies which **device size** this rule should be applied to, and `WIDTH`
 specifies the **percentage width** of the cell.
 
 ```html
