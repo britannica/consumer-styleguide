@@ -312,10 +312,6 @@
   margin-left: 95%;
 }
 
-.grid-xs-offset-100 {
-  margin-left: 100%;
-}
-
 .grid-xs-offset-33 {
   margin-left: 33%;
 }
@@ -626,9 +622,6 @@
   .grid-sm-offset-95 {
     margin-left: 95%;
   }
-  .grid-sm-offset-100 {
-    margin-left: 100%;
-  }
   .grid-sm-offset-33 {
     margin-left: 33%;
   }
@@ -931,9 +924,6 @@
   .grid-md-offset-95 {
     margin-left: 95%;
   }
-  .grid-md-offset-100 {
-    margin-left: 100%;
-  }
   .grid-md-offset-33 {
     margin-left: 33%;
   }
@@ -1235,9 +1225,6 @@
   }
   .grid-lg-offset-95 {
     margin-left: 95%;
-  }
-  .grid-lg-offset-100 {
-    margin-left: 100%;
   }
   .grid-lg-offset-33 {
     margin-left: 33%;

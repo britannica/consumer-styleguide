@@ -70,7 +70,7 @@
 
     /* Offsets in intervals of 5 + 33, 66 */
 
-    @for $i from 1 through 20 {
+    @for $i from 1 through 19 {
 
         .grid-#{$size}-offset-#{$i * 5} {
             margin-left: #{$i * 5 + '%'};
