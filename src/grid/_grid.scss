@@ -73,8 +73,7 @@
     @for $i from 1 through 20 {
 
         .grid-#{$size}-offset-#{$i * 5} {
-            flex-basis: #{$i * 5 + '%'};
-            max-width: #{$i * 5 + '%'};
+            margin-left: #{$i * 5 + '%'};
         }
     }
 
