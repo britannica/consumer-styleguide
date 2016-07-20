@@ -1,1 +1,196 @@
 
+/* --------------- */
+/* --- 1. Grid --- */
+/* --------------- */
+
+@import '../variables';
+
+
+// --- Mixins
+
+// Create a grid for specified screen size
+
+@mixin grid($size, $gutter) {
+
+    .grid:not(.no-gutter) {
+        margin-right: -$gutter;
+
+        > [class*=grid-#{$size}] {
+            padding: 0 $gutter $gutter 0;
+        }
+    }
+
+
+    /* Auto-width */
+
+    .grid-#{$size} {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+    }
+
+
+    /* Columns in intervals of 5 + 33, 66 */
+
+    @for $i from 1 through 20 {
+
+        .grid-#{$size}-#{$i * 5} {
+            flex-basis: #{$i * 5 + '%'};
+            max-width: #{$i * 5 + '%'};
+        }
+    }
+
+    .grid-#{$size}-33 {
+        flex-basis: 33%;
+        max-width: 33%;
+    }
+
+    .grid-#{$size}-66 {
+        flex-basis: 66%;
+        max-width: 66%;
+    }
+
+
+    /* Columns in predefined ad sizes */
+
+    $ad-list: 160 200 300;
+
+    [class*=grid-#{$size}-ad] {
+        box-sizing: content-box;
+    }
+
+    @each $ad in $ad-list {
+
+        .grid-#{$size}-ad-#{$ad} {
+            flex-basis: #{$ad}px;
+            max-width: #{$ad}px;
+        }
+    }
+
+
+    /* Offsets in intervals of 5 + 33, 66 */
+
+    @for $i from 1 through 20 {
+
+        .grid-#{$size}-offset-#{$i * 5} {
+            flex-basis: #{$i * 5 + '%'};
+            max-width: #{$i * 5 + '%'};
+        }
+    }
+
+    .grid-#{$size}-offset-33 {
+        margin-left: 33%;
+    }
+
+    .grid-#{$size}-offset-66 {
+        margin-left: 66%;
+    }
+}
+
+
+// Alignment classes for specified screen size
+
+@mixin grid-alignment($size) {
+
+
+    /* Left, center, right */
+
+    .start-#{$size} {
+        justify-content: flex-start;
+    }
+
+    .center-#{$size} {
+        justify-content: center;
+    }
+
+    .end-#{$size} {
+        justify-content: flex-end;
+    }
+
+
+    /* Top, middle, bottom */
+
+    .top-#{$size} {
+        align-items: flex-start;
+        align-self: flex-start;
+    }
+
+    .middle-#{$size} {
+        align-items: center;
+        align-self: center;
+    }
+
+    .bottom-#{$size} {
+        align-items: flex-end;
+        align-self: flex-end;
+    }
+}
+
+
+// Distribution classes for specified screen size
+
+@mixin grid-distribution($size) {
+
+
+    /* Around, between */
+
+    .between-#{$size} {
+        justify-content: space-between;
+    }
+
+    .around-#{$size} {
+        justify-content: space-around;
+    }
+}
+
+
+/* --- Base --- */
+
+.grid {
+    box-sizing: border-box;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+[class*=grid-] {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+}
+
+
+/* --- Extra-small; default --- */
+
+@include grid('xs', $gutter-xs);
+@include grid-alignment('xs');
+@include grid-distribution('xs');
+
+
+/* --- Small --- */
+
+@media (min-width: $screen-sm-min) {
+
+    @include grid('sm', $gutter-sm);
+    @include grid-alignment('sm');
+    @include grid-distribution('sm');
+}
+
+
+/* --- Medium --- */
+
+@media (min-width: $screen-md-min) {
+
+    @include grid('md', $gutter-md);
+    @include grid-alignment('md');
+    @include grid-distribution('md');
+}
+
+
+/* --- Large --- */
+
+@media (min-width: $screen-lg-min) {
+
+    @include grid('lg', $gutter-lg);
+    @include grid-alignment('lg');
+    @include grid-distribution('lg');
+}

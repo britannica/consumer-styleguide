@@ -1,1 +1,34 @@
 
+// --- Layout --- //
+
+$baseline-grid: 8px !default;
+
+
+// Gutters
+
+$gutter-lg:         ($baseline-grid * 4) !default;      // 32px
+$gutter-md:         ($baseline-grid * 3) !default;      // 24px
+$gutter-sm:         ($baseline-grid * 2) !default;      // 16px
+$gutter-xs:         $baseline-grid !default;            // 8px
+
+
+// Large breakpoints - 1248+
+
+$screen-lg-min:     ($baseline-grid * 156) !default;    // 1248px
+
+
+// Medium breakpoints - 960-1247
+
+$screen-md-max:     $screen-lg-min - 1 !default;        // 1247px
+$screen-md-min:     ($baseline-grid * 120) !default;    // 960px
+
+
+// Small breakpoints - 600-959
+
+$screen-sm-max:     $screen-md-min - 1 !default;        // 959px
+$screen-sm-min:     ($baseline-grid * 75) !default;     // 600px
+
+
+// Extra-small breakpoints - 599-
+
+$screen-xs-max:     $screen-sm-min - 1 !default;        // 599px
