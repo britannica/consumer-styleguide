@@ -1,6 +1,6 @@
 
 /* --------------- */
-/* --- 1. Grid --- */
+/* --- 2. Grid --- */
 /* --------------- */
 
 @import '../variables';
@@ -15,7 +15,7 @@
     .grid:not(.no-gutter) {
         margin-right: -$gutter;
 
-        > [class*=grid-#{$size}] {
+        > [class*=grid-] {
             padding: 0 $gutter $gutter 0;
         }
     }
@@ -30,7 +30,7 @@
     }
 
 
-    /* Columns in intervals of 5 + 33, 66 */
+    /* Columns 5-100 in intervals of 5 + 33, 66 */
 
     @for $i from 1 through 20 {
 
@@ -41,13 +41,13 @@
     }
 
     .grid-#{$size}-33 {
-        flex-basis: 33%;
-        max-width: 33%;
+        flex-basis: 33.33333%;
+        max-width: 33.33333%;
     }
 
     .grid-#{$size}-66 {
-        flex-basis: 66%;
-        max-width: 66%;
+        flex-basis: 66.66666%;
+        max-width: 66.66666%;
     }
 
 
@@ -68,7 +68,7 @@
     }
 
 
-    /* Offsets in intervals of 5 + 33, 66 */
+    /* Offsets 5-95 in intervals of 5 + 33, 66 */
 
     @for $i from 1 through 19 {
 
@@ -78,11 +78,11 @@
     }
 
     .grid-#{$size}-offset-33 {
-        margin-left: 33%;
+        margin-left: 33.33333%;
     }
 
     .grid-#{$size}-offset-66 {
-        margin-left: 66%;
+        margin-left: 66.66666%;
     }
 }
 
@@ -143,7 +143,7 @@
 }
 
 
-/* --- Base --- */
+/* Base */
 
 .grid {
     box-sizing: border-box;

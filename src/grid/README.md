@@ -1,3 +1,5 @@
+## Grid
+
 ### To include a grid component:
 
 &nbsp;1. Create a `<div>` element with the `.grid` class
