@@ -1411,19 +1411,19 @@
 }
 
 .padding-1 {
-  margin: 8px;
+  padding: 8px;
 }
 
 .padding-2 {
-  margin: 16px;
+  padding: 16px;
 }
 
 .padding-3 {
-  margin: 24px;
+  padding: 24px;
 }
 
 .padding-4 {
-  margin: 32px;
+  padding: 32px;
 }
 
 /* --- Responsive utilities --- */

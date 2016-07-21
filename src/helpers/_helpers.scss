@@ -51,7 +51,7 @@ $spacings-list: 'margin' 'padding';
     @for $i from 1 through 4 {
 
         .#{$spacing}-#{$i} {
-            margin: $i * $baseline-grid;
+            #{$spacing}: $i * $baseline-grid;
         }
     }
 }
