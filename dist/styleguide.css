@@ -3,13 +3,43 @@
  *
  * Table of Contents
  * -----------------
- * 1. Grid
- *
+ * 1. Layout
+ * 2. Grid
  */
+/* ----------------- */
+/* --- 1. Layout --- */
+/* ----------------- */
+/* Containers */
+.container, .container-fluid {
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (min-width: 600px) {
+  .container {
+    width: 600px;
+  }
+}
+
+@media (min-width: 960px) {
+  .container {
+    width: 960px;
+  }
+}
+
+@media (min-width: 1248px) {
+  .container {
+    width: 1248px;
+  }
+}
+
 /* --------------- */
-/* --- 1. Grid --- */
+/* --- 2. Grid --- */
 /* --------------- */
-/* --- Base --- */
+/* Base */
 .grid {
   box-sizing: border-box;
   display: -webkit-box;
@@ -38,7 +68,7 @@
   margin-right: -8px;
 }
 
-.grid:not(.no-gutter) > [class*=grid-xs] {
+.grid:not(.no-gutter) > [class*=grid-] {
   padding: 0 8px 8px 0;
 }
 
@@ -54,7 +84,7 @@
   max-width: 100%;
 }
 
-/* Columns in intervals of 5 + 33, 66 */
+/* Columns 5-100 in intervals of 5 + 33, 66 */
 .grid-xs-5 {
   -webkit-flex-basis: 5%;
   -ms-flex-preferred-size: 5%;
@@ -196,17 +226,17 @@
 }
 
 .grid-xs-33 {
-  -webkit-flex-basis: 33%;
-  -ms-flex-preferred-size: 33%;
-  flex-basis: 33%;
-  max-width: 33%;
+  -webkit-flex-basis: 33.33333%;
+  -ms-flex-preferred-size: 33.33333%;
+  flex-basis: 33.33333%;
+  max-width: 33.33333%;
 }
 
 .grid-xs-66 {
-  -webkit-flex-basis: 66%;
-  -ms-flex-preferred-size: 66%;
-  flex-basis: 66%;
-  max-width: 66%;
+  -webkit-flex-basis: 66.66666%;
+  -ms-flex-preferred-size: 66.66666%;
+  flex-basis: 66.66666%;
+  max-width: 66.66666%;
 }
 
 /* Columns in predefined ad sizes */
@@ -235,7 +265,7 @@
   max-width: 300px;
 }
 
-/* Offsets in intervals of 5 + 33, 66 */
+/* Offsets 5-95 in intervals of 5 + 33, 66 */
 .grid-xs-offset-5 {
   margin-left: 5%;
 }
@@ -313,11 +343,11 @@
 }
 
 .grid-xs-offset-33 {
-  margin-left: 33%;
+  margin-left: 33.33333%;
 }
 
 .grid-xs-offset-66 {
-  margin-left: 66%;
+  margin-left: 66.66666%;
 }
 
 /* Left, center, right */
@@ -395,7 +425,7 @@
   .grid:not(.no-gutter) {
     margin-right: -16px;
   }
-  .grid:not(.no-gutter) > [class*=grid-sm] {
+  .grid:not(.no-gutter) > [class*=grid-] {
     padding: 0 16px 16px 0;
   }
   /* Auto-width */
@@ -409,7 +439,7 @@
     flex-grow: 1;
     max-width: 100%;
   }
-  /* Columns in intervals of 5 + 33, 66 */
+  /* Columns 5-100 in intervals of 5 + 33, 66 */
   .grid-sm-5 {
     -webkit-flex-basis: 5%;
     -ms-flex-preferred-size: 5%;
@@ -531,16 +561,16 @@
     max-width: 100%;
   }
   .grid-sm-33 {
-    -webkit-flex-basis: 33%;
-    -ms-flex-preferred-size: 33%;
-    flex-basis: 33%;
-    max-width: 33%;
+    -webkit-flex-basis: 33.33333%;
+    -ms-flex-preferred-size: 33.33333%;
+    flex-basis: 33.33333%;
+    max-width: 33.33333%;
   }
   .grid-sm-66 {
-    -webkit-flex-basis: 66%;
-    -ms-flex-preferred-size: 66%;
-    flex-basis: 66%;
-    max-width: 66%;
+    -webkit-flex-basis: 66.66666%;
+    -ms-flex-preferred-size: 66.66666%;
+    flex-basis: 66.66666%;
+    max-width: 66.66666%;
   }
   /* Columns in predefined ad sizes */
   [class*=grid-sm-ad] {
@@ -564,7 +594,7 @@
     flex-basis: 300px;
     max-width: 300px;
   }
-  /* Offsets in intervals of 5 + 33, 66 */
+  /* Offsets 5-95 in intervals of 5 + 33, 66 */
   .grid-sm-offset-5 {
     margin-left: 5%;
   }
@@ -623,10 +653,10 @@
     margin-left: 95%;
   }
   .grid-sm-offset-33 {
-    margin-left: 33%;
+    margin-left: 33.33333%;
   }
   .grid-sm-offset-66 {
-    margin-left: 66%;
+    margin-left: 66.66666%;
   }
   /* Left, center, right */
   .start-sm {
@@ -697,7 +727,7 @@
   .grid:not(.no-gutter) {
     margin-right: -24px;
   }
-  .grid:not(.no-gutter) > [class*=grid-md] {
+  .grid:not(.no-gutter) > [class*=grid-] {
     padding: 0 24px 24px 0;
   }
   /* Auto-width */
@@ -711,7 +741,7 @@
     flex-grow: 1;
     max-width: 100%;
   }
-  /* Columns in intervals of 5 + 33, 66 */
+  /* Columns 5-100 in intervals of 5 + 33, 66 */
   .grid-md-5 {
     -webkit-flex-basis: 5%;
     -ms-flex-preferred-size: 5%;
@@ -833,16 +863,16 @@
     max-width: 100%;
   }
   .grid-md-33 {
-    -webkit-flex-basis: 33%;
-    -ms-flex-preferred-size: 33%;
-    flex-basis: 33%;
-    max-width: 33%;
+    -webkit-flex-basis: 33.33333%;
+    -ms-flex-preferred-size: 33.33333%;
+    flex-basis: 33.33333%;
+    max-width: 33.33333%;
   }
   .grid-md-66 {
-    -webkit-flex-basis: 66%;
-    -ms-flex-preferred-size: 66%;
-    flex-basis: 66%;
-    max-width: 66%;
+    -webkit-flex-basis: 66.66666%;
+    -ms-flex-preferred-size: 66.66666%;
+    flex-basis: 66.66666%;
+    max-width: 66.66666%;
   }
   /* Columns in predefined ad sizes */
   [class*=grid-md-ad] {
@@ -866,7 +896,7 @@
     flex-basis: 300px;
     max-width: 300px;
   }
-  /* Offsets in intervals of 5 + 33, 66 */
+  /* Offsets 5-95 in intervals of 5 + 33, 66 */
   .grid-md-offset-5 {
     margin-left: 5%;
   }
@@ -925,10 +955,10 @@
     margin-left: 95%;
   }
   .grid-md-offset-33 {
-    margin-left: 33%;
+    margin-left: 33.33333%;
   }
   .grid-md-offset-66 {
-    margin-left: 66%;
+    margin-left: 66.66666%;
   }
   /* Left, center, right */
   .start-md {
@@ -999,7 +1029,7 @@
   .grid:not(.no-gutter) {
     margin-right: -32px;
   }
-  .grid:not(.no-gutter) > [class*=grid-lg] {
+  .grid:not(.no-gutter) > [class*=grid-] {
     padding: 0 32px 32px 0;
   }
   /* Auto-width */
@@ -1013,7 +1043,7 @@
     flex-grow: 1;
     max-width: 100%;
   }
-  /* Columns in intervals of 5 + 33, 66 */
+  /* Columns 5-100 in intervals of 5 + 33, 66 */
   .grid-lg-5 {
     -webkit-flex-basis: 5%;
     -ms-flex-preferred-size: 5%;
@@ -1135,16 +1165,16 @@
     max-width: 100%;
   }
   .grid-lg-33 {
-    -webkit-flex-basis: 33%;
-    -ms-flex-preferred-size: 33%;
-    flex-basis: 33%;
-    max-width: 33%;
+    -webkit-flex-basis: 33.33333%;
+    -ms-flex-preferred-size: 33.33333%;
+    flex-basis: 33.33333%;
+    max-width: 33.33333%;
   }
   .grid-lg-66 {
-    -webkit-flex-basis: 66%;
-    -ms-flex-preferred-size: 66%;
-    flex-basis: 66%;
-    max-width: 66%;
+    -webkit-flex-basis: 66.66666%;
+    -ms-flex-preferred-size: 66.66666%;
+    flex-basis: 66.66666%;
+    max-width: 66.66666%;
   }
   /* Columns in predefined ad sizes */
   [class*=grid-lg-ad] {
@@ -1168,7 +1198,7 @@
     flex-basis: 300px;
     max-width: 300px;
   }
-  /* Offsets in intervals of 5 + 33, 66 */
+  /* Offsets 5-95 in intervals of 5 + 33, 66 */
   .grid-lg-offset-5 {
     margin-left: 5%;
   }
@@ -1227,10 +1257,10 @@
     margin-left: 95%;
   }
   .grid-lg-offset-33 {
-    margin-left: 33%;
+    margin-left: 33.33333%;
   }
   .grid-lg-offset-66 {
-    margin-left: 66%;
+    margin-left: 66.66666%;
   }
   /* Left, center, right */
   .start-lg {

@@ -1,0 +1,38 @@
+
+/* ----------------- */
+/* --- 1. Layout --- */
+/* ----------------- */
+
+@import "../variables";
+
+
+/* Containers */
+
+.container, .container-fluid {
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+@media (min-width: $screen-sm-min) {
+
+    .container {
+        width: $screen-sm-min;
+    }
+}
+
+@media (min-width: $screen-md-min) {
+
+    .container {
+        width: $screen-md-min;
+    }
+}
+
+@media (min-width: $screen-lg-min) {
+
+    .container {
+        width: $screen-lg-min;
+    }
+}

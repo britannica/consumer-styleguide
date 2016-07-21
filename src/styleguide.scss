@@ -4,12 +4,13 @@
  *
  * Table of Contents
  * -----------------
- * 1. Grid
- *
+ * 1. Layout
+ * 2. Grid
  */
 
 @import "colors";
 @import "variables";
 
+@import "layout/layout";
 @import "grid/grid";
 @import "typography/typography";
