@@ -30,6 +30,15 @@
     }
 
 
+    /* Shrink-to-fit */
+
+    .grid-#{$size}-shrink {
+        flex-basis: auto;
+        flex-shrink: 1;
+        max-width: 100%;
+    }
+
+
     /* Columns 5-100 in intervals of 5 + 33, 66 */
 
     @for $i from 1 through 20 {
