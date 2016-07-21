@@ -19,8 +19,8 @@
 </div>
 ```
 
-&nbsp;3. Add a `.grid-SIZE-WIDTH` class, where `SIZE` specifies which **device size** this rule should be applied to, and `WIDTH`
-specifies the **percentage width** of the cell.
+&nbsp;3. Add a `.grid-S-N` class, where `S` specifies which **device size** this rule should be applied to, and `N`
+specifies the **width** of the cell.
 
 ```html
 <div class="grid">
