@@ -17,13 +17,13 @@
 
 /* Text-align */
 
-$positions-list: 'left' 'center' 'right';
+$position-list: 'left' 'center' 'right';
 
 @each $label, $size in $screen-size-map {
 
     @media (if($label == 'xs', 'max-width', 'min-width'): $size) {
 
-        @each $position in $positions-list {
+        @each $position in $position-list {
 
             .text-#{$position}-#{$label} {
                 text-align: #{$position};
@@ -32,7 +32,7 @@ $positions-list: 'left' 'center' 'right';
     }
 }
 
-@each $position in $positions-list {
+@each $position in $position-list {
 
     .text-#{$position} {
         text-align: #{$position};
@@ -44,9 +44,9 @@ $positions-list: 'left' 'center' 'right';
 
 /* Margin and padding */
 
-$spacings-list: 'margin' 'padding';
+$spacing-list: 'margin' 'padding';
 
-@each $spacing in $spacings-list {
+@each $spacing in $spacing-list {
 
     @for $i from 1 through 4 {
 
