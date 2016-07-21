@@ -5,6 +5,7 @@
  * -----------------
  * 1. Layout
  * 2. Grid
+ * X. Helpers
  */
 /* ----------------- */
 /* --- 1. Layout --- */
@@ -1323,5 +1324,158 @@
     -webkit-justify-content: space-around;
     -ms-flex-pack: distribute;
     justify-content: space-around;
+  }
+}
+
+/* ------------------ */
+/* --- X. Helpers --- */
+/* ------------------ */
+/* --- Typography --- */
+/* Text-align */
+@media (max-width: 599px) {
+  .text-left-xs {
+    text-align: left;
+  }
+  .text-center-xs {
+    text-align: center;
+  }
+  .text-right-xs {
+    text-align: right;
+  }
+}
+
+@media (min-width: 600px) {
+  .text-left-sm {
+    text-align: left;
+  }
+  .text-center-sm {
+    text-align: center;
+  }
+  .text-right-sm {
+    text-align: right;
+  }
+}
+
+@media (min-width: 960px) {
+  .text-left-md {
+    text-align: left;
+  }
+  .text-center-md {
+    text-align: center;
+  }
+  .text-right-md {
+    text-align: right;
+  }
+}
+
+@media (min-width: 1248px) {
+  .text-left-lg {
+    text-align: left;
+  }
+  .text-center-lg {
+    text-align: center;
+  }
+  .text-right-lg {
+    text-align: right;
+  }
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* --- Spacing --- */
+/* Margin and padding */
+.margin-1 {
+  margin: 8px;
+}
+
+.margin-2 {
+  margin: 16px;
+}
+
+.margin-3 {
+  margin: 24px;
+}
+
+.margin-4 {
+  margin: 32px;
+}
+
+.padding-1 {
+  margin: 8px;
+}
+
+.padding-2 {
+  margin: 16px;
+}
+
+.padding-3 {
+  margin: 24px;
+}
+
+.padding-4 {
+  margin: 32px;
+}
+
+/* --- Responsive utilities --- */
+/* Show/hide based on screen size */
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 599px) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+
+@media (min-width: 600px) {
+  .hidden-gt-xs {
+    display: none !important;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
+@media (max-width: 959px) {
+  .hidden-lt-md {
+    display: none !important;
+  }
+}
+
+@media (min-width: 960px) {
+  .hidden-gt-sm {
+    display: none !important;
+  }
+}
+
+@media (min-width: 960px) and (max-width: 1247px) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1247px) {
+  .hidden-lt-lg {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1248px) {
+  .hidden-lg {
+    display: none !important;
   }
 }

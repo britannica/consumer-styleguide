@@ -1,0 +1,114 @@
+
+/* ------------------ */
+/* --- X. Helpers --- */
+/* ------------------ */
+
+@import "../variables";
+
+
+// Mixins
+
+@mixin display-none() {
+    display: none !important;
+}
+
+
+/* --- Typography --- */
+
+/* Text-align */
+
+$positions-list: 'left' 'center' 'right';
+
+@each $label, $size in $screen-size-map {
+
+    @media (if($label == 'xs', 'max-width', 'min-width'): $size) {
+
+        @each $position in $positions-list {
+
+            .text-#{$position}-#{$label} {
+                text-align: #{$position};
+            }
+        }
+    }
+}
+
+@each $position in $positions-list {
+
+    .text-#{$position} {
+        text-align: #{$position};
+    }
+}
+
+
+/* --- Spacing --- */
+
+/* Margin and padding */
+
+$spacings-list: 'margin' 'padding';
+
+@each $spacing in $spacings-list {
+
+    @for $i from 1 through 4 {
+
+        .#{$spacing}-#{$i} {
+            margin: $i * $baseline-grid;
+        }
+    }
+}
+
+
+/* --- Responsive utilities --- */
+
+/* Show/hide based on screen size */
+
+.hidden {
+    @include display-none();
+}
+
+@media (max-width: $screen-xs-max) {
+    .hidden-xs {
+        @include display-none();
+    }
+}
+
+@media (min-width: $screen-sm-min) {
+    .hidden-gt-xs {
+        @include display-none();
+    }
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    .hidden-sm {
+        @include display-none();
+    }
+}
+
+@media (max-width: $screen-sm-max) {
+    .hidden-lt-md {
+        @include display-none();
+    }
+}
+
+@media (min-width: $screen-md-min) {
+    .hidden-gt-sm {
+        @include display-none();
+    }
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    .hidden-md {
+        @include display-none();
+    }
+}
+
+@media (max-width: $screen-md-max) {
+    .hidden-lt-lg {
+        @include display-none();
+    }
+}
+
+@media (min-width: $screen-lg-min) {
+    .hidden-lg {
+        @include display-none();
+    }
+}
