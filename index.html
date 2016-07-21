@@ -25,28 +25,111 @@
 
         .box {
             background-color: #f00;
-            padding: 1em;
+            padding: 1.5em;
+        }
+
+        .tall.box {
+            height: 200px;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
+    <h1>Grid</h1>
+    <hr>
+    <h2>Auto</h2>
     <div class="grid">
         <div class="grid-xs">
-            <div class="box">
-                Content
-            </div>
+            <div class="box"></div>
         </div>
         <div class="grid-xs">
-            <div class="box">
-                Content
-            </div>
+            <div class="box"></div>
         </div>
         <div class="grid-xs">
-            <div class="box">
-                Content
-            </div>
+            <div class="box"></div>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="grid-xs">
+            <div class="box"></div>
+        </div>
+        <div class="grid-xs">
+            <div class="box"></div>
+        </div>
+    </div>
+    <h2>Offsets</h2>
+    <div class="grid">
+        <div class="grid-xs-80 grid-xs-offset-10">
+            <div class="box"></div>
+        </div>
+        <div class="grid-xs-70 grid-xs-offset-15">
+            <div class="box"></div>
+        </div>
+        <div class="grid-xs-60 grid-xs-offset-20">
+            <div class="box"></div>
+        </div>
+        <div class="grid-xs-50 grid-xs-offset-25">
+            <div class="box"></div>
+        </div>
+        <div class="grid-xs-40 grid-xs-offset-30">
+            <div class="box"></div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Alignment</h2>
+    <div class="grid start-xs">
+        <div class="grid-xs-50">
+            <div class="box"></div>
+        </div>
+    </div>
+    <div class="grid center-xs">
+        <div class="grid-xs-50">
+            <div class="box"></div>
+        </div>
+    </div>
+    <div class="grid end-xs">
+        <div class="grid-xs-50">
+            <div class="box"></div>
+        </div>
+    </div>
+    <div class="grid middle-xs">
+        <div class="grid-xs">
+            <div class="tall box"></div>
+        </div>
+        <div class="grid-xs">
+            <div class="box"></div>
+        </div>
+        <div class="grid-xs bottom-xs">
+            <div class="box"></div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Distribution</h2>
+    <div class="grid between-xs">
+        <div class="grid-xs-15">
+            <div class="box"></div>
+        </div>
+        <div class="grid-xs-15">
+            <div class="box"></div>
+        </div>
+        <div class="grid-xs-15">
+            <div class="box"></div>
+        </div>
+    </div>
+    <div class="grid around-xs">
+        <div class="grid-xs-15">
+            <div class="box"></div>
+        </div>
+        <div class="grid-xs-15">
+            <div class="box"></div>
+        </div>
+        <div class="grid-xs-15">
+            <div class="box"></div>
         </div>
     </div>
 </div>
