@@ -1,38 +1,141 @@
 
-/* ----------------- */
-/* --- 1. Layout --- */
-/* ----------------- */
+/**
+ * Layout
+ *
+ * Containers and flex direction layouts
+ */
 
 @import "../variables";
 
 
-/* Containers */
+/* --- Containers --- */
 
-.container, .container-fluid {
+.container, .container-fluid, .container-absolute {
     box-sizing: border-box;
+    clear: both;
     margin-left: auto;
     margin-right: auto;
     max-width: 100%;
-    overflow-x: hidden;
+    width: $screen-lg-min;
 }
 
-@media (min-width: $screen-sm-min) {
+.container-absolute {
+    position: absolute;
+}
+
+
+/* Media queries */
+
+@media (max-width: $screen-xs-max) {
+
+    $padding-xs: 1rem;
 
     .container {
-        width: $screen-sm-min;
+        padding-left: $padding-xs;
+        padding-right: $padding-xs;
+    }
+
+    .container-absolute {
+        max-width: calc(100% - #{$padding-xs * 2});
     }
 }
 
-@media (min-width: $screen-md-min) {
+@media (min-width: $screen-sm-min) and (max-width: $screen-md-max) {
+
+    $padding-md: 25px;
 
     .container {
-        width: $screen-md-min;
+        padding-left: $padding-md;
+        padding-right: $padding-md;
+    }
+
+    .container-absolute {
+        max-width: calc(100% - #{$padding-md * 2});
     }
 }
 
 @media (min-width: $screen-lg-min) {
 
     .container {
-        width: $screen-lg-min;
+        padding-left: 0;
+        padding-right: 0;
     }
+}
+
+
+/* --- Layouts --- */
+
+/**
+ * Activate a layout by using one of the data-layout attributes.
+ * e.g. <div data-layout-md="row-reverse"></div>
+ *
+ *
+ * Possible attributes:
+ *
+ * data-layout
+ * data-layout-xs
+ * data-layout-gt-xs
+ * data-layout-sm
+ * data-layout-gt-sm
+ * data-layout-md
+ * data-layout-lg
+ *
+ *
+ * Possible values:
+ *
+ * column
+ * column-reverse
+ * row
+ * row-reverse
+ */
+
+$direction-list: column column-reverse row row-reverse;
+
+@mixin layouts($size: '') {
+
+    @each $direction in $direction-list {
+
+        [data-layout#{$size}] {
+            display: flex;
+        }
+
+        [data-layout#{$size}=#{$direction}] {
+            flex-direction: $direction;
+        }
+    }
+}
+
+@include layouts();
+
+
+/* Media queries */
+
+@media (max-width: $screen-xs-max) {
+
+    @include layouts('-xs');
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+
+    @include layouts('-sm');
+}
+
+@media (min-width: $screen-sm-min) {
+
+    @include layouts('-gt-xs');
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+
+    @include layouts('-md');
+}
+
+@media (min-width: $screen-md-min) {
+
+    @include layouts('-gt-sm');
+}
+
+@media (min-width: $screen-lg-min) {
+
+    @include layouts('-lg');
 }
