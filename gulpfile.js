@@ -21,10 +21,10 @@ gulp.task('sass', () => {
 
     getFolders(SRC_DIR)
         .map(folder => {
-            buildCss(path.join(SRC_DIR, folder, '/*.scss'), `${folder}.css`);
+            buildCss(path.join(SRC_DIR, folder, SASS_GLOB), `${folder}.css`);
         });
 
-    //buildCss(path.join(SRC_DIR, SASS_GLOB), 'styleguide.css');
+    buildCss(path.join(SRC_DIR, SASS_GLOB), 'styleguide.css');
 });
 
 
@@ -57,8 +57,6 @@ function getFolders(dir) {
  */
 
 function buildCss(src, filename, dest = DIST_DIR) {
-
-    console.log(src, filename, dest);
 
     return gulp.src(src)
         .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
