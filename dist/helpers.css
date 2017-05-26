@@ -1,0 +1,152 @@
+/* ------------------ */
+/* --- X. Helpers --- */
+/* ------------------ */
+/* --- Typography --- */
+/* Text-align */
+@media (max-width: 671px) {
+  .text-left-xs {
+    text-align: left;
+  }
+  .text-center-xs {
+    text-align: center;
+  }
+  .text-right-xs {
+    text-align: right;
+  }
+}
+
+@media (min-width: 672px) {
+  .text-left-sm {
+    text-align: left;
+  }
+  .text-center-sm {
+    text-align: center;
+  }
+  .text-right-sm {
+    text-align: right;
+  }
+}
+
+@media (min-width: 960px) {
+  .text-left-md {
+    text-align: left;
+  }
+  .text-center-md {
+    text-align: center;
+  }
+  .text-right-md {
+    text-align: right;
+  }
+}
+
+@media (min-width: 1248px) {
+  .text-left-lg {
+    text-align: left;
+  }
+  .text-center-lg {
+    text-align: center;
+  }
+  .text-right-lg {
+    text-align: right;
+  }
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* --- Spacing --- */
+/* Margin and padding */
+.margin-1 {
+  margin: 8px;
+}
+
+.margin-2 {
+  margin: 16px;
+}
+
+.margin-3 {
+  margin: 24px;
+}
+
+.margin-4 {
+  margin: 32px;
+}
+
+.padding-1 {
+  padding: 8px;
+}
+
+.padding-2 {
+  padding: 16px;
+}
+
+.padding-3 {
+  padding: 24px;
+}
+
+.padding-4 {
+  padding: 32px;
+}
+
+/* --- Responsive utilities --- */
+/* Show/hide based on screen size */
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 671px) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+
+@media (min-width: 672px) {
+  .hidden-gt-xs {
+    display: none !important;
+  }
+}
+
+@media (min-width: 672px) and (max-width: 959px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
+@media (max-width: 959px) {
+  .hidden-lt-md {
+    display: none !important;
+  }
+}
+
+@media (min-width: 960px) {
+  .hidden-gt-sm {
+    display: none !important;
+  }
+}
+
+@media (min-width: 960px) and (max-width: 1247px) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1247px) {
+  .hidden-lt-lg {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1248px) {
+  .hidden-lg {
+    display: none !important;
+  }
+}
