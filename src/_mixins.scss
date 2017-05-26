@@ -1,0 +1,87 @@
+
+@import "colors";
+@import "variables";
+
+
+/* --- Mixins --- */
+
+@mixin toc-panel-width($element) {
+    $element: $toc-panel-width;
+
+    @media (min-width: $screen-lg-min) {
+        $element: $toc-panel-width-lg;
+    }
+}
+
+@mixin flex($isImportant: false) {
+    display: if($isImportant, flex !important, flex);
+}
+
+@mixin flex-start() {
+    @include flex;
+    justify-content: flex-start;
+}
+
+@mixin flex-center() {
+    @include flex;
+    justify-content: center;
+}
+
+@mixin flex-end() {
+    @include flex;
+    justify-content: flex-end;
+}
+
+@mixin flex-top() {
+    @include flex;
+    align-items: flex-start;
+    align-self: flex-start;
+}
+
+@mixin flex-middle() {
+    @include flex;
+    align-items: center;
+    align-self: center;
+}
+
+@mixin flex-bottom() {
+    @include flex;
+    align-items: flex-end;
+    align-self: flex-end;
+}
+
+@mixin icon-text-shadow() {
+    text-shadow: 0 0 30px $black;
+}
+
+@mixin container-shadow() {
+    box-shadow: 0 5px 5px rgba($black, 0.2);
+}
+
+@mixin popover-animation($margin-top: 0) {
+    margin-top: $margin-top - 10px;
+    opacity: 0;
+    transition: all $default-animation-speed;
+
+    &.md-active {
+        margin-top: $margin-top;
+        opacity: 1;
+    }
+}
+
+
+// Default year component
+
+@mixin history-date($is-absolute: true) {
+    background-color: $purple;
+    box-shadow: 0 4px 10px -2px rgba($black, 0.5);
+    color: $white;
+    padding: 5px 10px;
+
+    @if $is-absolute == true {
+        left: 0;
+        margin-top: 25px;
+        position: absolute;
+        top: 0;
+    }
+}

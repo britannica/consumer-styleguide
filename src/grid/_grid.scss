@@ -3,6 +3,7 @@
 /* --- 2. Grid --- */
 /* --------------- */
 
+@import '../mixins';
 @import '../variables';
 
 
@@ -12,11 +13,25 @@
 
 @mixin grid($size, $gutter) {
 
-    .grid:not(.no-gutter) {
+    .grid:not(.no-gutter):not(.no-gutter-#{$size}) {
         margin-right: -$gutter;
 
         > [class*=grid-] {
             padding: 0 $gutter $gutter 0;
+        }
+
+        &.gutter-right > [class*=grid-] {
+            padding-bottom: 0;
+        }
+
+        &.gutter-bottom {
+            margin-bottom: 0;
+
+            > [class*=grid-] {
+                margin: 0 0 $gutter 0;
+                padding-bottom: 0;
+                padding-right: 0;
+            }
         }
     }
 
@@ -26,37 +41,13 @@
     .grid-#{$size} {
         flex-basis: 0;
         flex-grow: 1;
-        max-width: 100%;
     }
 
 
     /* Shrink-to-fit */
 
     .grid-#{$size}-shrink {
-        flex-basis: auto;
-        flex-shrink: 1;
-        max-width: 100%;
-    }
-
-
-    /* Columns 5-100 in intervals of 5 + 33, 66 */
-
-    @for $i from 1 through 20 {
-
-        .grid-#{$size}-#{$i * 5} {
-            flex-basis: #{$i * 5 + '%'};
-            max-width: #{$i * 5 + '%'};
-        }
-    }
-
-    .grid-#{$size}-33 {
-        flex-basis: 33.33333%;
-        max-width: 33.33333%;
-    }
-
-    .grid-#{$size}-66 {
-        flex-basis: 66.66666%;
-        max-width: 66.66666%;
+        flex: 0 1 auto;
     }
 
 
@@ -72,8 +63,34 @@
 
         .grid-#{$size}-ad-#{$ad} {
             flex-basis: #{$ad}px;
-            max-width: #{$ad}px;
+            width: #{$ad}px;
         }
+    }
+
+
+    /* Columns 5-100 in intervals of 5 + 33, 66 */
+
+    @for $i from 1 through 20 {
+
+        .grid-#{$size}-#{$i * 5} {
+            flex: #{$i * 5 + '%'} 0;
+            max-width: #{$i * 5 + '%'};
+        }
+    }
+
+    .grid-#{$size}-16 {
+        flex: 16.66666% 0;
+        max-width: 16.66666%;
+    }
+
+    .grid-#{$size}-33 {
+        flex: 33.33333% 0;
+        max-width: 33.33333%;
+    }
+
+    .grid-#{$size}-66 {
+        flex: 66.66666% 0;
+        max-width: 66.66666%;
     }
 
 
@@ -84,6 +101,10 @@
         .grid-#{$size}-offset-#{$i * 5} {
             margin-left: #{$i * 5 + '%'};
         }
+    }
+
+    .grid-#{$size}-offset-16 {
+        margin-left: 16.66666%;
     }
 
     .grid-#{$size}-offset-33 {
@@ -104,33 +125,30 @@
     /* Left, center, right */
 
     .start-#{$size} {
-        justify-content: flex-start;
+        @include flex-start;
     }
 
     .center-#{$size} {
-        justify-content: center;
+        @include flex-center;
     }
 
     .end-#{$size} {
-        justify-content: flex-end;
+        @include flex-end;
     }
 
 
     /* Top, middle, bottom */
 
     .top-#{$size} {
-        align-items: flex-start;
-        align-self: flex-start;
+        @include flex-top;
     }
 
     .middle-#{$size} {
-        align-items: center;
-        align-self: center;
+        @include flex-middle;
     }
 
     .bottom-#{$size} {
-        align-items: flex-end;
-        align-self: flex-end;
+        @include flex-bottom;
     }
 }
 
@@ -143,11 +161,57 @@
     /* Around, between */
 
     .between-#{$size} {
+        display: flex;
         justify-content: space-between;
     }
 
     .around-#{$size} {
+        display: flex;
         justify-content: space-around;
+    }
+}
+
+
+// Ordering
+
+@mixin grid-ordering($size) {
+
+    .first-#{$size} {
+        order: -1;
+    }
+
+    .last-#{$size} {
+        order: 1;
+    }
+}
+
+
+// Gutters
+
+@mixin gutters($size, $gutter) {
+
+    .gutter-bottom {
+        margin-bottom: $gutter;
+    }
+
+    .gutter-bottom-small {
+        margin-bottom: $gutter / 2;
+    }
+
+    .gutter-top {
+        margin-top: $gutter;
+    }
+
+    .gutter-bottom-#{$size} {
+        margin-bottom: $gutter;
+    }
+
+    .gutter-right-#{$size} {
+        margin-right: $gutter;
+    }
+
+    .gutter-top-#{$size} {
+        margin-top: $gutter;
     }
 }
 
@@ -159,11 +223,18 @@
     display: flex;
     flex: 1;
     flex-wrap: wrap;
+    max-height: 100%;
+}
+
+.gutter-right, .gutter-bottom {
+    max-width: none;
 }
 
 [class*=grid-] {
     box-sizing: border-box;
     flex: 0 0 auto;
+    max-width: 100%;
+    min-width: 0;
 }
 
 
@@ -172,6 +243,11 @@
 @include grid('xs', $gutter-xs);
 @include grid-alignment('xs');
 @include grid-distribution('xs');
+@include grid-ordering('xs');
+
+@media (max-width: $screen-xs-max) {
+    @include gutters('xs', $gutter-xs);
+}
 
 
 /* --- Small --- */
@@ -181,6 +257,11 @@
     @include grid('sm', $gutter-sm);
     @include grid-alignment('sm');
     @include grid-distribution('sm');
+    @include grid-ordering('sm');
+
+    @media (max-width: $screen-sm-max) {
+        @include gutters('sm', $gutter-sm);
+    }
 }
 
 
@@ -191,6 +272,11 @@
     @include grid('md', $gutter-md);
     @include grid-alignment('md');
     @include grid-distribution('md');
+    @include grid-ordering('md');
+
+    @media (max-width: $screen-md-max) {
+        @include gutters('md', $gutter-md);
+    }
 }
 
 
@@ -201,4 +287,27 @@
     @include grid('lg', $gutter-lg);
     @include grid-alignment('lg');
     @include grid-distribution('lg');
+    @include grid-ordering('lg');
+    @include gutters('lg', $gutter-lg);
+}
+
+
+// OLD GRID
+
+.grid.fixed-width {
+    flex: unset;
+}
+
+/* --- grid --- */
+
+@media (max-width: $screen-xs-max) {
+
+    .grid-gutters-xs {
+        margin-right: -2px;
+    }
+
+    .grid-gutters-xs > [class*=grid-] {
+        padding-bottom: 2px;
+        padding-right: 2px;
+    }
 }

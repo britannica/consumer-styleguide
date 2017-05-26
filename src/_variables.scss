@@ -5,6 +5,7 @@ $baseline-grid: 8px !default;
 
 
 // Gutters
+// Note: If you change any values here, please update the MediaQueries values in constants.js
 
 $gutter-lg:         ($baseline-grid * 4) !default;      // 32px
 $gutter-md:         ($baseline-grid * 3) !default;      // 24px
@@ -12,8 +13,14 @@ $gutter-sm:         ($baseline-grid * 2) !default;      // 16px
 $gutter-xs:         $baseline-grid !default;            // 8px
 
 
+// X-Large breakpoint - 1400+
+
+$screen-xl-min:     ($baseline-grid * 175) !default;    // 1400px
+
+
 // Large breakpoints - 1248+
 
+$screen-lg-max:     $screen-xl-min - 1 !default;        // 1399px
 $screen-lg-min:     ($baseline-grid * 156) !default;    // 1248px
 
 
@@ -23,15 +30,15 @@ $screen-md-max:     $screen-lg-min - 1 !default;        // 1247px
 $screen-md-min:     ($baseline-grid * 120) !default;    // 960px
 
 
-// Small breakpoints - 600-959
+// Small breakpoints - 672-959
 
 $screen-sm-max:     $screen-md-min - 1 !default;        // 959px
-$screen-sm-min:     ($baseline-grid * 75) !default;     // 600px
+$screen-sm-min:     ($baseline-grid * 84) !default;     // 672px
 
 
-// Extra-small breakpoints - 599-
+// Extra-small breakpoints - 672-
 
-$screen-xs-max:     $screen-sm-min - 1 !default;        // 599px
+$screen-xs-max:     $screen-sm-min - 1 !default;        // 671px
 
 
 // Screen size mappings
@@ -42,3 +49,46 @@ $screen-size-map: (
         'md': $screen-md-min,
         'lg': $screen-lg-min
 );
+
+
+// One off screen sizes...
+
+$screen-320: 320px;
+
+
+// Global navigation bar
+
+$global-nav-height: 70px;
+$global-nav-height-collapsed: 35px;
+$global-nav-height-collapsed-mobile: 50px;
+
+
+// Article toolbar
+
+$article-toolbar-height: 60px;
+$article-toolbar-height-xs: $global-nav-height-collapsed-mobile;
+
+
+// TOC panel
+
+$toc-panel-width: 225px;
+$toc-panel-width-lg: 300px;
+
+
+// Z-indices
+
+$z-lowest:  0;
+$z-lower:   1;
+$z-low:     2;
+$z-higher:  99998;
+$z-highest: 99999;
+
+
+// Animations
+
+$default-animation-speed: 0.2s;
+
+
+// Button/icon states
+
+$button-disabled-opacity: 0.3;
