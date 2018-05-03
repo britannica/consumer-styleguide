@@ -16,10 +16,11 @@
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
     "gulp-concat": "^2.6.1",
-    "gulp-connect": "^5.2.0",
-    "gulp-livingcss": "^2.2.0",
-    "gulp-sass": "^3.1.0",
+    "gulp-connect": "^5.5.0",
+    "gulp-livingcss": "^2.2.3",
+    "gulp-sass": "^4.0.1",
     "livingcss": "github:straker/livingcss",
     "run-sequence": "^2.2.1"
   },

@@ -1,0 +1,91 @@
+
+/**
+ * Typography
+ *
+ * ##### **Notes**
+ *
+ * Site fonts against a light-colored background are typically rendered in a dark gray, #333. Link colors are typically
+ * blue and underlined.
+ *
+ * Site fonts against a dark-colored background are typically rendered in white. Link colors are typically white and
+ * Bright Blue on hover.
+ *
+ * Headings or sub-headings are rendered in black.
+ *
+ * @section
+ * @page Atoms
+ */
+
+
+/**
+ * Fonts
+ *
+ * [Cinzel](https://fonts.google.com/specimen/Cinzel) is used for our "Encyclopaedia Britannica" logotype.
+ *
+ * [Montserrat](https://fonts.google.com/specimen/Montserrat) is the default, used everywhere else.
+ *
+ * @example
+ * <h1 class="md-logotype">Aa</h1>
+ * <h1>Aa</h1>
+ *
+ * @section
+ * @sectionof Typography
+ */
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+.md-logotype {
+    font-family: "Cinzel";
+}
+
+
+/**
+ * Headings
+ *
+ * All HTML headings, `<h1>` through `<h6>`, are available.
+ *
+ * `.md-heading-1` through `.md-heading-6` classes are also available, for when you want to match the font styling of a heading but cannot use the associated HTML element.
+ *
+ * @example
+ * <h1>.md-heading-1</h1>
+ * <h2>.md-heading-2</h2>
+ * <h3>.md-heading-3</h3>
+ * <h4>.md-heading-4</h4>
+ * <h5>.md-heading-5</h5>
+ * <h6>.md-heading-6</h6>
+ *
+ * @section
+ * @sectionof Typography
+ */
+
+h1, h2, h3, h4, h5, h6,
+.md-heading-1, .md-heading-2, .md-heading-3, .md-heading-4, .md-heading-5, .md-heading-6 {
+    font-weight: 400;
+    margin: 0;
+}
+
+h1, .md-heading-1 {
+    font-size: 46px;
+}
+
+h2, .md-heading-2 {
+    font-size: 40px;
+}
+
+h3, .md-heading-3 {
+    font-size: 32px;
+}
+
+h4, .md-heading-4 {
+    font-size: 26px;
+}
+
+h5, .md-heading-5 {
+    font-size: 22px;
+}
+
+h6, .md-heading-6 {
+    font-size: 18px;
+}
